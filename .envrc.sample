@@ -1,4 +1,4 @@
-export SERVICE=${REPO_NAME_SNAKE}
+export SERVICE=${REPO_NAME_KEBAB}
 export DOMAIN=${REPO_NAME_KEBAB}.example.com
-export STACK_NAME=${REPO_NAME_KEBAB}
+export STACK_NAME=${REPO_NAME_SNAKE}
 export LETS_ENCRYPT_ENV=production
