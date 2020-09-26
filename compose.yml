@@ -1,0 +1,29 @@
+---
+version: "3.8"
+
+services:
+  app:
+    image: nginx:1.19.2
+    networks:
+      - proxy
+    deploy:
+      restart_policy:
+        condition: on-failure
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=proxy"
+        - "traefik.http.routers.${STACK_NAME}.tls=true"
+        - "traefik.http.services.${STACK_NAME}.loadbalancer.server.port=80"
+        - "traefik.http.routers.${STACK_NAME}.rule=Host(`${DOMAIN}`)"
+        - "traefik.http.routers.${STACK_NAME}.tls.certresolver=${LETS_ENCRYPT_ENV}"
+        - "traefik.http.routers.${STACK_NAME}.entrypoints=web-secure"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 1m
+
+networks:
+  proxy:
+    external: true
