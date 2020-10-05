@@ -11,12 +11,14 @@ services:
         condition: on-failure
       labels:
         - "traefik.enable=true"
-        - "traefik.docker.network=proxy"
-        - "traefik.http.routers.${STACK_NAME}.tls=true"
         - "traefik.http.services.${STACK_NAME}.loadbalancer.server.port=80"
-        - "traefik.http.routers.${STACK_NAME}.rule=Host(`${DOMAIN}`)"
-        - "traefik.http.routers.${STACK_NAME}.tls.certresolver=${LETS_ENCRYPT_ENV}"
+        - "traefik.http.routers.${STACK_NAME}.rule=Host(`${DOMAIN}`${EXTRA_DOMAINS})"
         - "traefik.http.routers.${STACK_NAME}.entrypoints=web-secure"
+        - "traefik.http.routers.${STACK_NAME}.tls.certresolver=${LETS_ENCRYPT_ENV}"
+        ## Redirect from EXTRA_DOMAINS to DOMAIN
+        #- "traefik.http.routers.${STACK_NAME}.middlewares=${STACK_NAME}-redirect"
+        #- "traefik.http.middlewares.${STACK_NAME}-redirect.headers.SSLForceHost=true"
+        #- "traefik.http.middlewares.${STACK_NAME}-redirect.headers.SSLHost=${DOMAIN}"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost"]
       interval: 30s

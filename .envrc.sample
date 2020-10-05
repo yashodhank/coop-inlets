@@ -1,4 +1,7 @@
 export SERVICE=${REPO_NAME_KEBAB}
-export DOMAIN=${REPO_NAME_KEBAB}.example.com
 export STACK_NAME=${REPO_NAME_SNAKE}
+
+export DOMAIN=${REPO_NAME_KEBAB}.example.com
+## Domain aliases
+#export EXTRA_DOMAINS=', `www.wordpress.example.com`'
 export LETS_ENCRYPT_ENV=production
