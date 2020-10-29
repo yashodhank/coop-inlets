@@ -1,4 +1,4 @@
-export SERVICE=${REPO_NAME_KEBAB}
+export APP=${REPO_NAME_KEBAB}
 export STACK_NAME=${REPO_NAME_SNAKE}
 
 export DOMAIN=${REPO_NAME_KEBAB}.example.com
