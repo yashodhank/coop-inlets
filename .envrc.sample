@@ -1,6 +1,0 @@
-export APP=${REPO_NAME_KEBAB}
-
-export DOMAIN=${REPO_NAME_KEBAB}.example.com
-## Domain aliases
-#export EXTRA_DOMAINS=', `www.${REPO_NAME_KEBAB}.example.com`'
-export LETS_ENCRYPT_ENV=production
