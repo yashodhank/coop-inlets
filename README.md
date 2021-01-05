@@ -1,17 +1,16 @@
-# ${REPO_NAME_TITLE}
+zR${REPO_NAME_TITLE}
 
 ${REPO_DESCRIPTION}
 
 ## Basic usage
 
 1. Set up Docker Swarm and [`abra`]
-2. Deploy [`compose-stacks/traefik`]
-3. `git clone ${REPO_HTTPS_URL} && cd ${REPO_NAME}`
-3. `cp .envrc.sample .envrc`
-4. Edit `.envrc` - be sure to change `$DOMAIN` to something that resolves to
+2. Deploy [`coop-cloud/traefik`]
+3. `abra app new ${REPO_NAME} --secrets`
+4. `abra app YOURAPPDOMAIN config` - be sure to change `$DOMAIN` to something that resolves to
    your Docker swarm box
-5. `direnv allow` (or `. .envrc`)
-6. `abra deploy`
+5. `abra app YOURAPPDOMAIN deploy`
+6. Open the configured domain in your browser to finish set-up
 
 [`abra`]: https://git.autonomic.zone/autonomic-cooperative/abra
-[`compose-stacks/traefik`]: https://git.autonomic.zone/compose-stacks/traefik
+[`coop-cloud/traefik`]: https://git.autonomic.zone/coop-cloud/traefik
