@@ -2,11 +2,23 @@
 
 ${REPO_DESCRIPTION}
 
+<!-- metadata -->
+* **Category**:
+* **Status**: 
+* **Image**: [`${REPO_NAME}`](https://hub.docker.com/r/${REPO_NAME}/${REPO_NAME})
+* **Healthcheck**: 
+* **Backups**: 
+* **Email**: 
+* **Tests**: 
+* **SSO**: 
+<!-- endmetadata -->
+
 ## Basic usage
 
 1. Set up Docker Swarm and [`abra`]
 2. Deploy [`coop-cloud/traefik`]
-3. `abra app new ${REPO_NAME} --secrets`
+3. `abra app new ${REPO_NAME} --secrets` (optionally with `--pass` if you'd like
+   to save secrets in `pass`)
 4. `abra app YOURAPPDOMAIN config` - be sure to change `$DOMAIN` to something that resolves to
    your Docker swarm box
 5. `abra app YOURAPPDOMAIN deploy`
