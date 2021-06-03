@@ -42,6 +42,3 @@ steps:
       command: recipe ${REPO_NAME} release
       deploy_key:
         from_secret: abra_bot_deploy_key
-trigger:
-  event:
-    - tag
