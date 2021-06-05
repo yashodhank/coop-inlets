@@ -42,3 +42,15 @@ steps:
       command: recipe ${REPO_NAME} release
       deploy_key:
         from_secret: abra_bot_deploy_key
+
+  - name: trigger downstream builds
+    image: plugins/downstream
+    settings:
+      server: https://drone.autonomic.zone
+      token:
+        from_secret: decentral1se_token
+      fork: true
+      repositories:
+        - coop-cloud/auto-apps-json
+    depends_on:
+      - release a new version
