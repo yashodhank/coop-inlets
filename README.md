@@ -3,14 +3,14 @@
 ${REPO_DESCRIPTION}
 
 <!-- metadata -->
-* **Category**:
-* **Status**: 
-* **Image**: [`${REPO_NAME}`](https://hub.docker.com/r/${REPO_NAME}/${REPO_NAME})
-* **Healthcheck**: 
-* **Backups**: 
-* **Email**: 
-* **Tests**: 
-* **SSO**: 
+* **Category**: Apps
+* **Status**: ❹💣
+* **Image**: [`${REPO_NAME}`](https://hub.docker.com/r/${REPO_NAME}/${REPO_NAME}), ❸🍎
+* **Healthcheck**: No
+* **Backups**: No
+* **Email**: No
+* **Tests**: No
+* **SSO**: No
 <!-- endmetadata -->
 
 ## Basic usage
